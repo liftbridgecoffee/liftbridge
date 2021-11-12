@@ -6,15 +6,14 @@ export default function Home() {
 		<div>
 			<Head>
 				<title>
-					Lift Bridge Coffee Tacoma - Home of Washington's best breakfast
+					Lift Bridge Coffee Tacoma | Home to Washington's best breakfast
 					burrito
 				</title>
 				<meta
 					name="description"
-					content="Great coffee in the heart of tacoma."
+					content="The best coffee and breakfast burritos Tacoma has to offer. Located in the heart of Tacoma's booming downtown area, just accross from the iconic 11th street bridge."
 				/>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-				<meta name="keywords" content="coffee, tacoma, washington" />
 				<meta charset="UTF-8" />
 			</Head>
 			<h1>Welcome to Liftbridge</h1>
