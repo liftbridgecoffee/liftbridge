@@ -17,23 +17,25 @@ export async function getTestMenu() {
 
 		const rows = response.data.values;
 
-		console.log(rows);
-
 		if (rows.length) {
 			return {
 				title: rows[0][0],
-				items: rows.slice(2).map((item) => {
-					if (item[1].includes("::")) {
-						item[1] = item[1].split("::").join("\n");
-					}
-					if (item[1].includes("null")) {
-						item[1] = "";
-					}
-					if (item[1].includes("ADD ONS:")) {
-						// item[1] = item[1].split("ADD ONS: ").join("\nADD ONS:\n");
-						item[1] = item[1].split("ADD ONS: ");
-					}
-					return { item: item[0], description: item[1] };
+				items: rows.slice(2).map((row) => {
+					let newRow = row.map((column) => {
+						let newColumn = column;
+						if (newColumn.includes("::")) {
+							newColumn = column.split("::").join("\n");
+						}
+						if (newColumn.includes("null")) {
+							newColumn = "";
+						}
+						return newColumn;
+					});
+					let item = newRow[0];
+					let description = newRow[1];
+					let addons = newRow[2];
+					console.log({ item, description, addons });
+					return { item, description, addons };
 				}),
 			};
 		}

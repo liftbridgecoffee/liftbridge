@@ -21,26 +21,26 @@ export default function Home({ menu }) {
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<meta charset="UTF-8" />
 			</Head>
-			{/* <h1>Welcome to Liftbridge</h1> */}
+			<h1>Welcome to Liftbridge</h1>
 			<h1>{menu.title}</h1>
 
 			{menu.items.map((item, index) => {
-	
 				return (
 					<span key={`${index}${index}`}>
 						<h3 key={`${index}${item.item * 2}`}>{item.item}</h3>
-						{Array.isArray(item.description) && item.description.length > 1 ? (
-							<span key={`${index * 2}${item.item + 2}u`}>
-								{item.description[0]}
-								<br></br>
-								ADD ONS:<br></br>
-								{item.description[1]}
-							</span>
-						) : (
-							<span key={`${index * 2}${item.item + 2}u`}>
-								{item.description}
-							</span>
-						)}
+						<span key={`${index * 2}${item.item + 2}u`}>
+							{item.description}
+							{item.addons ? (
+								<>
+									<br></br>
+									<span>
+										<b>ADD ONS:</b>
+									</span>
+									<br></br>
+									<span>{item.addons}</span>
+								</>
+							) : null}
+						</span>
 					</span>
 				);
 			})}
