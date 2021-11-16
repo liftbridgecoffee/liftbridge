@@ -7,19 +7,22 @@ const menu = () => {
 
 			<ul>
 				<li>
-					<Link href="/menu/example">example</Link>
+					<Link href="/menu/specialty-drinks">specialty</Link>
 				</li>
 				<li>
-					<Link href="/menu/copyofexample">copyofexample</Link>
+					<Link href="/menu/seasonal">seasonal</Link>
 				</li>
 				<li>
-					<Link href="/menu/test3">test3</Link>
+					<Link href="/menu/food">food</Link>
 				</li>
 				<li>
-					<Link href="/menu/test4">test4</Link>
+					<Link href="/menu/blended">blended</Link>
 				</li>
 				<li>
-					<Link href="/menu/test5">test5</Link>
+					<Link href="/menu/bottled">bottled</Link>
+				</li>
+				<li>
+					<Link href="/menu/catering">catering</Link>
 				</li>
 			</ul>
 		</div>

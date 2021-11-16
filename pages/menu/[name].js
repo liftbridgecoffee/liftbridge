@@ -1,48 +1,48 @@
-import { getTestMenu } from "../api/sheets";
+import { makeAPICall } from "../api";
 
-const MenuDisplayPage = ({ menu }) => {
+const MenuDisplayPage = ({ menu, name }) => {
 	console.log(menu);
 
-	return (
-		<div>
-			<h1>{menu.title}</h1>
+	const selectedMenuRender = (name) => {
+		switch (name) {
+			case "specialty-drinks":
+				return <h1>{menu.title}</h1>;
+			case "seasonal":
+				return <h1>{menu.title}</h1>;
+			case "food":
+				return <h1>{menu.title}</h1>;
+			case "blended":
+				return <h1>{menu.title}</h1>;
+			case "bottled":
+				return <h1>{menu.title}</h1>;
+			case "catering":
+				return <h1>{menu.title}</h1>;
+		}
+	};
 
-			{menu.items.map((item, index) => {
-				return (
-					<span key={`${index}${index}`}>
-						<h3 key={`${index}${item.item * 2}`}>{item.item}</h3>
-						<span key={`${index * 2}${item.item + 2}u`}>
-							{item.description}
-							{item.addons ? (
-								<>
-									<br></br>
-									<span>
-										<b>ADD ONS:</b>
-									</span>
-									<br></br>
-									<span>{item.addons}</span>
-								</>
-							) : null}
-						</span>
-					</span>
-				);
-			})}
-		</div>
-	);
+	return <>{selectedMenuRender(name)}</>;
 };
 
 export async function getStaticProps({ params }) {
-	const menu = await getTestMenu(params.name);
+	const menu = await makeAPICall(params.name);
 	return {
 		props: {
 			menu,
+			name: params.name,
 		},
 	};
 }
 
 export async function getStaticPaths() {
 	return {
-		paths: ["/menu/example", "/menu/copyofexample"],
+		paths: [
+			"/menu/specialty-drinks",
+			"/menu/seasonal",
+			"/menu/food",
+			"/menu/blended",
+			"/menu/bottled",
+			"/menu/catering",
+		],
 		fallback: `blocking`,
 	};
 }
