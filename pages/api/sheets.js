@@ -1,5 +1,8 @@
 import { google } from "googleapis";
-export async function getTestMenu() {
+
+
+
+export async function getStandardMenu(sheet) {
 	try {
 		const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
 		const jwt = new google.auth.JWT(
@@ -12,7 +15,7 @@ export async function getTestMenu() {
 		const sheets = google.sheets({ version: "v4", auth: jwt });
 		const response = await sheets.spreadsheets.values.get({
 			spreadsheetId: process.env.SPREADSHEET_ID,
-			range: "Example", // sheet name
+			range: sheet, // sheet name
 		});
 
 		const rows = response.data.values;
