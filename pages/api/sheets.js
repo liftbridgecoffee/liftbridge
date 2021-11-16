@@ -1,7 +1,5 @@
 import { google } from "googleapis";
 
-
-
 export async function getStandardMenu(sheet) {
 	try {
 		const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
