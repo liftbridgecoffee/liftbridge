@@ -10,7 +10,7 @@ export default function Home({ menu }) {
 		<div>
 			<Head>
 				<title>
-					Lift Bridge Coffee Tacoma | Home to Washington's best breakfast
+					Lift Bridge Coffee Tacoma | Home to Washingtons best breakfast
 					burrito
 				</title>
 				<meta
