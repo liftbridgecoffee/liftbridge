@@ -139,96 +139,102 @@ export const getSpecialtyMenu = async (sheet) => {
 };
 
 // //!Get blended Menu
-// export const getBlendedMenu = async (sheet) => {
-// 	try {
-// 		const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
-// 		const jwt = new google.auth.JWT(
-// 			process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
-// 			null,
-// 			(process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
-// 			target
-// 		);
+export const getBlendedMenu = async (sheet) => {
+	try {
+		const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
+		const jwt = new google.auth.JWT(
+			process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+			null,
+			(process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
+			target
+		);
 
-// 		const sheets = google.sheets({ version: "v4", auth: jwt });
-// 		const response = await sheets.spreadsheets.values.get({
-// 			spreadsheetId: process.env.SPREADSHEET_ID,
-// 			range: sheet, // sheet name
-// 		});
+		const sheets = google.sheets({ version: "v4", auth: jwt });
+		const response = await sheets.spreadsheets.values.get({
+			spreadsheetId: process.env.SPREADSHEET_ID,
+			range: sheet, // sheet name
+		});
 
-// 		const rows = response.data.values;
+		const rows = response.data.values;
 
-// 		if (rows.length) {
-// 			return {
-// 				title: rows[0][0],
-// 				items: rows.slice(2).map((row) => {
-// 					let newRow = row.map((column) => {
-// 						let newColumn = column;
-// 						if (newColumn.includes("::")) {
-// 							newColumn = column.split("::").join("\n");
-// 						}
-// 						if (newColumn.includes("null")) {
-// 							newColumn = "";
-// 						}
-// 						return newColumn;
-// 					});
-// 					let item = newRow[0];
-// 					let description = newRow[1];
-// 					let addons = newRow[2];
-// 					console.log({ item, description, addons });
-// 					return { item, description, addons };
-// 				}),
-// 			};
-// 		}
-// 	} catch (err) {
-// 		return err;
-// 	}
-// };
+		if (rows.length) {
+			let title = rows[0][0];
+			let frappe = { prices: [], addons: [], items: [] };
+			let smoothie = { prices: [], addons: [], items: [] };
 
-// //!Get bottled Menu
-// export const getBottledMenu = async (sheet) => {
-// 	try {
-// 		const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
-// 		const jwt = new google.auth.JWT(
-// 			process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
-// 			null,
-// 			(process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
-// 			target
-// 		);
+			rows.slice(2).map((row) => {
+				let newRow = row.map((column) => {
+					let newColumn = column;
+					if (newColumn.includes("::")) {
+						newColumn = column.split("::").join("\n");
+					}
+					if (newColumn.includes("null")) {
+						newColumn = "";
+					}
+					return newColumn;
+				});
+				if (newRow[0]) frappe.items.push(newRow[0]);
+				if (newRow[1]) frappe.addons.push(newRow[1]);
+				if (newRow[2]) frappe.prices.push(newRow[2]);
+				if (newRow[3]) smoothie.items.push(newRow[3]);
+				if (newRow[4]) smoothie.addons.push(newRow[4]);
+				if (newRow[5]) smoothie.prices.push(newRow[5]);
+			});
+			return {
+				title,
+				smoothie,
+				frappe,
+			};
+		}
+	} catch (err) {
+		return err;
+	}
+};
 
-// 		const sheets = google.sheets({ version: "v4", auth: jwt });
-// 		const response = await sheets.spreadsheets.values.get({
-// 			spreadsheetId: process.env.SPREADSHEET_ID,
-// 			range: sheet, // sheet name
-// 		});
+//!Get bottled Menu
+export const getBottledMenu = async (sheet) => {
+	try {
+		const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
+		const jwt = new google.auth.JWT(
+			process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+			null,
+			(process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
+			target
+		);
 
-// 		const rows = response.data.values;
+		const sheets = google.sheets({ version: "v4", auth: jwt });
+		const response = await sheets.spreadsheets.values.get({
+			spreadsheetId: process.env.SPREADSHEET_ID,
+			range: sheet, // sheet name
+		});
 
-// 		if (rows.length) {
-// 			return {
-// 				title: rows[0][0],
-// 				items: rows.slice(2).map((row) => {
-// 					let newRow = row.map((column) => {
-// 						let newColumn = column;
-// 						if (newColumn.includes("::")) {
-// 							newColumn = column.split("::").join("\n");
-// 						}
-// 						if (newColumn.includes("null")) {
-// 							newColumn = "";
-// 						}
-// 						return newColumn;
-// 					});
-// 					let item = newRow[0];
-// 					let description = newRow[1];
-// 					let addons = newRow[2];
-// 					console.log({ item, description, addons });
-// 					return { item, description, addons };
-// 				}),
-// 			};
-// 		}
-// 	} catch (err) {
-// 		return err;
-// 	}
-// };
+		const rows = response.data.values;
+
+		if (rows.length) {
+			return {
+				title: rows[0][0],
+				items: rows.slice(2).map((row) => {
+					let newRow = row.map((column) => {
+						let newColumn = column;
+						if (newColumn.includes("::")) {
+							newColumn = column.split("::").join("\n");
+						}
+						if (newColumn.includes("null")) {
+							newColumn = "";
+						}
+						return newColumn;
+					});
+					let item = newRow[0];
+					let description = newRow[1];
+					// console.log({ item, description });
+					return { item, description };
+				}),
+			};
+		}
+	} catch (err) {
+		return err;
+	}
+};
 // //!Get seasonal Menu
 export const getSeasonalDrinks = async (sheet) => {
 	try {
