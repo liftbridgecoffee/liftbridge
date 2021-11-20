@@ -1,4 +1,4 @@
-//!unique layout - completely separated from standard menu design
+import Item from "../../MenuComponents/Item";
 const Winter = () => {
 	return <div></div>;
 };

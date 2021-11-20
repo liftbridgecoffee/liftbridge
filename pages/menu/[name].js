@@ -2,10 +2,14 @@ import { makeAPICall } from "../api";
 
 import StandardLayout from "../../Components/MenuLayouts/Standard/StandardLayout";
 import Specialty from "../../Components/MenuLayouts/Standard/Specialty";
+import Seasonal from "../../Components/MenuLayouts/Seasonal/Winter";
+import Blended from "../../Components/MenuLayouts/Standard/Blended";
+import Bottled from "../../Components/MenuLayouts/Standard/Bottled";
+import Catering from "../../Components/MenuLayouts/Standard/Catering";
+import Food from "../../Components/MenuLayouts/Standard/Food";
 import MenuPageHead from "../../Components/MenuPageHead";
 
 const MenuDisplayPage = ({ menu, name }) => {
-	console.log(menu);
 
 	const selectedMenuRender = (name) => {
 		switch (name) {
@@ -16,15 +20,35 @@ const MenuDisplayPage = ({ menu, name }) => {
 					</StandardLayout>
 				);
 			case "seasonal":
-				return <h1>{menu.title}</h1>;
+				return (
+					<StandardLayout menu={menu}>
+						<Seasonal menu={menu} />
+					</StandardLayout>
+				);
 			case "food":
-				return <h1>{menu.title}</h1>;
+				return (
+					<StandardLayout menu={menu}>
+						<Food menu={menu} />
+					</StandardLayout>
+				);
 			case "blended":
-				return <h1>{menu.title}</h1>;
+				return (
+					<StandardLayout menu={menu}>
+						<Blended menu={menu} />
+					</StandardLayout>
+				);
 			case "bottled":
-				return <h1>{menu.title}</h1>;
+				return (
+					<StandardLayout menu={menu}>
+						<Bottled menu={menu} />
+					</StandardLayout>
+				);
 			case "catering":
-				return <h1>{menu.title}</h1>;
+				return (
+					<StandardLayout menu={menu}>
+						<Catering menu={menu} />
+					</StandardLayout>
+				);
 		}
 	};
 

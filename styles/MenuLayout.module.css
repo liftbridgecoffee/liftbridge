@@ -1,3 +1,11 @@
+@font-face {
+	font-family: playlist;
+	src: url(../public/FontsFree-Net-PlaylistScript.ttf);
+}
+@font-face {
+	font-family: glacial indifference;
+	src: url(../public/GlacialIndifference-Regular.otf);
+}
 .menuLayout ul {
 	list-style: none;
 }
@@ -5,3 +13,18 @@
 	height: 100vh;
 	width: 100vw;
 }
+.h1 {
+	font-family: "playlist";
+	font-size: 4rem;
+	font-weight: 100;
+}
+
+.menuLayout {
+	font-family: glacial indifference;
+	letter-spacing: .1rem;
+}
+
+.aside {
+	font-weight: bold;
+}
+

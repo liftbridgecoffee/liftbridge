@@ -5,7 +5,6 @@ import PriceSize from "../../MenuComponents/PriceSize";
 
 //!nearly identical to standard layout
 const Specialty = ({ menu }) => {
-	console.log(menu.priceList);
 	return (
 		<>
 			<section>

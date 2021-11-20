@@ -67,6 +67,7 @@ export const getFoodMenu = async (sheet) => {
 		const rows = response.data.values;
 
 		if (rows.length) {
+			let priceList = [];
 			return {
 				pageDescription: rows[0][1],
 				title: rows[1][0],
@@ -84,8 +85,10 @@ export const getFoodMenu = async (sheet) => {
 					let item = newRow[0];
 					let description = newRow[1];
 					let addons = newRow[2];
+					if (!!newRow[3]) priceList.push(newRow[3]);
 					return { item, description, addons };
 				}),
+				priceList,
 			};
 		}
 	} catch (err) {
@@ -233,7 +236,6 @@ export const getBottledMenu = async (sheet) => {
 					});
 					let item = newRow[0];
 					let description = newRow[1];
-					// console.log({ item, description });
 					return { item, description };
 				}),
 			};
