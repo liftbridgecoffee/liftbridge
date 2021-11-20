@@ -1,9 +1,10 @@
-
-const Item = () => {
+const Item = ({ item }) => {
 	return (
-		<div>
-			<h1>This is a menu Item</h1>
-		</div>
+		<article>
+			{item.item ? <h2>{item.item}</h2> : null}
+			{item.description ? <p>{item.description}</p> : null}
+			{item.addons ? <p>{item.addons}</p> : null}
+		</article>
 	);
 };
 

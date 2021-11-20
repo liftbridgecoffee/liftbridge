@@ -1,12 +1,20 @@
 import { makeAPICall } from "../api";
 
+import StandardLayout from "../../Components/MenuLayouts/Standard/StandardLayout";
+import Specialty from "../../Components/MenuLayouts/Standard/Specialty";
+import MenuPageHead from "../../Components/MenuPageHead";
+
 const MenuDisplayPage = ({ menu, name }) => {
 	console.log(menu);
 
 	const selectedMenuRender = (name) => {
 		switch (name) {
 			case "specialty-drinks":
-				return <h1>{menu.title}</h1>;
+				return (
+					<StandardLayout menu={menu}>
+						<Specialty menu={menu} />
+					</StandardLayout>
+				);
 			case "seasonal":
 				return <h1>{menu.title}</h1>;
 			case "food":
@@ -20,7 +28,12 @@ const MenuDisplayPage = ({ menu, name }) => {
 		}
 	};
 
-	return <>{selectedMenuRender(name)}</>;
+	return (
+		<>
+			<MenuPageHead menu={menu} />
+			{selectedMenuRender(name)}
+		</>
+	);
 };
 
 export async function getStaticProps({ params }) {

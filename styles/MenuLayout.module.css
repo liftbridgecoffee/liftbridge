@@ -1,0 +1,7 @@
+.menuLayout ul {
+	list-style: none;
+}
+.menuLayout.baseContainer div {
+	height: 100vh;
+	width: 100vw;
+}

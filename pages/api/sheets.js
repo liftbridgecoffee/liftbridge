@@ -21,8 +21,9 @@ export const getCateringMenu = async (sheet) => {
 
 		if (rows.length) {
 			return {
-				title: rows[0][0],
-				items: rows.slice(2).map((row) => {
+				pageDescription: rows[0][1],
+				title: rows[1][0],
+				items: rows.slice(3).map((row) => {
 					let newRow = row.map((column) => {
 						let newColumn = column;
 						if (newColumn.includes("::")) {
@@ -67,8 +68,9 @@ export const getFoodMenu = async (sheet) => {
 
 		if (rows.length) {
 			return {
-				title: rows[0][0],
-				items: rows.slice(2).map((row) => {
+				pageDescription: rows[0][1],
+				title: rows[1][0],
+				items: rows.slice(3).map((row) => {
 					let newRow = row.map((column) => {
 						let newColumn = column;
 						if (newColumn.includes("::")) {
@@ -113,8 +115,9 @@ export const getSpecialtyMenu = async (sheet) => {
 		if (rows.length) {
 			let priceList = [];
 			return {
-				title: rows[0][0],
-				items: rows.slice(2).map((row) => {
+				pageDescription: rows[0][1],
+				title: rows[1][0],
+				items: rows.slice(3).map((row) => {
 					let newRow = row.map((column) => {
 						let newColumn = column;
 						if (newColumn.includes("::")) {
@@ -127,8 +130,9 @@ export const getSpecialtyMenu = async (sheet) => {
 					});
 					let item = newRow[0];
 					let description = newRow[1];
-					if (!!newRow[2]) priceList.push(newRow[2]);
-					return { item, description };
+					let addons = newRow[2];
+					if (!!newRow[3]) priceList.push(newRow[3]);
+					return { item, description, addons };
 				}),
 				priceList,
 			};
@@ -158,11 +162,12 @@ export const getBlendedMenu = async (sheet) => {
 		const rows = response.data.values;
 
 		if (rows.length) {
-			let title = rows[0][0];
+			let pageDescription = rows[0][1];
+			let title = rows[1][0];
 			let frappe = { prices: [], addons: [], items: [] };
 			let smoothie = { prices: [], addons: [], items: [] };
 
-			rows.slice(2).map((row) => {
+			rows.slice(3).map((row) => {
 				let newRow = row.map((column) => {
 					let newColumn = column;
 					if (newColumn.includes("::")) {
@@ -181,6 +186,7 @@ export const getBlendedMenu = async (sheet) => {
 				if (newRow[5]) smoothie.prices.push(newRow[5]);
 			});
 			return {
+				pageDescription,
 				title,
 				smoothie,
 				frappe,
@@ -212,8 +218,9 @@ export const getBottledMenu = async (sheet) => {
 
 		if (rows.length) {
 			return {
-				title: rows[0][0],
-				items: rows.slice(2).map((row) => {
+				pageDescription: rows[0][1],
+				title: rows[1][0],
+				items: rows.slice(3).map((row) => {
 					let newRow = row.map((column) => {
 						let newColumn = column;
 						if (newColumn.includes("::")) {
@@ -257,8 +264,9 @@ export const getSeasonalDrinks = async (sheet) => {
 		if (rows.length) {
 			let priceList = [];
 			return {
-				title: rows[0][0],
-				items: rows.slice(2).map((row) => {
+				pageDescription: rows[0][1],
+				title: rows[1][0],
+				items: rows.slice(3).map((row) => {
 					let newRow = row.map((column) => {
 						let newColumn = column;
 						if (newColumn.includes("::")) {

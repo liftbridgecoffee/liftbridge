@@ -1,17 +1,11 @@
 import Head from "next/head";
 
-export default function Home({ menu }) {
-	// const menuTitle = menu[0].row[0]
-	console.log(menu);
-
-	// console.log(menuTitle)
-
+export default function Home({}) {
 	return (
 		<div>
 			<Head>
 				<title>
-					Lift Bridge Coffee Tacoma | Home to Washingtons best breakfast
-					burrito
+					Lift Bridge Coffee Tacoma | Home to Washingtons best breakfast burrito
 				</title>
 				<meta
 					name="description"
