@@ -10,42 +10,41 @@ import Food from "../../Components/MenuLayouts/Standard/Food";
 import MenuPageHead from "../../Components/MenuPageHead";
 
 const MenuDisplayPage = ({ menu, name }) => {
-
 	const selectedMenuRender = (name) => {
 		switch (name) {
 			case "specialty-drinks":
 				return (
-					<StandardLayout menu={menu}>
+					<StandardLayout name={name} menu={menu}>
 						<Specialty menu={menu} />
 					</StandardLayout>
 				);
 			case "seasonal":
 				return (
-					<StandardLayout menu={menu}>
+					<StandardLayout name={name} menu={menu}>
 						<Seasonal menu={menu} />
 					</StandardLayout>
 				);
 			case "food":
 				return (
-					<StandardLayout menu={menu}>
+					<StandardLayout name={name} menu={menu}>
 						<Food menu={menu} />
 					</StandardLayout>
 				);
 			case "blended":
 				return (
-					<StandardLayout menu={menu}>
+					<StandardLayout name={name} menu={menu}>
 						<Blended menu={menu} />
 					</StandardLayout>
 				);
 			case "bottled":
 				return (
-					<StandardLayout menu={menu}>
+					<StandardLayout name={name} menu={menu}>
 						<Bottled menu={menu} />
 					</StandardLayout>
 				);
 			case "catering":
 				return (
-					<StandardLayout menu={menu}>
+					<StandardLayout name={name} menu={menu}>
 						<Catering menu={menu} />
 					</StandardLayout>
 				);

@@ -1,0 +1,26 @@
+@media only screen and (max-width: 680px) {
+    .columnContainer {
+      	flex-wrap: wrap;
+    }
+  }
+.columnContainer {
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	justify-content: space-evenly;
+	align-items: stretch;
+	margin: auto;
+	width: 100%;
+}
+.columnLeft {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	max-width: 38ch;
+}
+.columnRight {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	max-width: 38ch;
+}

@@ -9,7 +9,7 @@ const Item = ({ item }) => {
 				</h2>
 			) : null}
 			{item.aside ? (
-				<p>
+				<p className={menuStyles.aside}>
 					<span className={menuStyles.aside}>{item.aside}</span>
 				</p>
 			) : null}
@@ -19,12 +19,15 @@ const Item = ({ item }) => {
 				</p>
 			) : null}
 			{item.addons ? (
-				<p>
-					<span>
-						ADD ONS:<br></br>
-						{item.addons}
-					</span>
-				</p>
+				<>
+					<span className={menuStyles.addonsLabel}>ADD ONS:</span>
+					<p>
+						<span>
+							{/* <br></br> */}
+							{item.addons}
+						</span>
+					</p>
+				</>
 			) : null}
 		</article>
 	);
