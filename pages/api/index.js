@@ -5,10 +5,13 @@ import {
 	getFoodMenu,
 	getSeasonalDrinks,
 	getSpecialtyMenu,
+	getMenuNames,
 } from "./sheets";
 
 export const makeAPICall = (sheet) => {
 	switch (sheet) {
+		case "names":
+		return getMenuNames()
 		case "specialty-drinks":
 			return getSpecialtyMenu(sheet);
 		case "seasonal":

@@ -1,6 +1,61 @@
 import { google } from "googleapis";
 
 //! Get the "Catering" menu
+
+export const getMenuNames = async () => {
+	try {
+		const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
+		const jwt = new google.auth.JWT(
+			process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+			null,
+			(process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
+			target
+		);
+
+		const sheets = google.sheets({ version: "v4", auth: jwt });
+		const response = await sheets.spreadsheets.values.get({
+			spreadsheetId: process.env.SPREADSHEET_ID,
+			range: "Menu-Names",
+		});
+
+		const rows = response.data.values;
+
+		return {
+			menus: rows.map((row) => {
+				let sheetName = row[0];
+				let title = row[1];
+				return { sheetName, title };
+			}),
+		};
+
+		// if (rows.length) {
+		// 	return {
+		// 		pageDescription: rows[0][1],
+		// 		title: rows[1][0],
+		// 		items: rows.slice(3).map((row) => {
+		// 			let newRow = row.map((column) => {
+		// 				let newColumn = column;
+		// 				if (newColumn.includes("::")) {
+		// 					newColumn = column.split("::").join("\n");
+		// 				}
+		// 				if (newColumn.includes("null")) {
+		// 					newColumn = "";
+		// 				}
+		// 				return newColumn;
+		// 			});
+		// 			let item = newRow[0];
+		// 			let description = newRow[1];
+		// 			let addons = newRow[2];
+		// 			let aside = newRow[3];
+		// 			return { item, description, addons, aside };
+		// 		}),
+		// 	};
+		// }
+	} catch (err) {
+		return err;
+	}
+};
+
 export const getCateringMenu = async (sheet) => {
 	try {
 		const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
@@ -113,7 +168,7 @@ export const getSpecialtyMenu = async (sheet) => {
 			range: sheet, // sheet name
 		});
 
-		const rows = response.data.values;
+		const rows = response.data;
 
 		if (rows.length) {
 			let priceList = [];
