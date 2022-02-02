@@ -12,7 +12,7 @@ export default function Home({}) {
 					content="The best coffee and breakfast burritos Tacoma has to offer. Located in the heart of Tacoma's booming downtown area, just accross from the iconic 11th street bridge."
 				/>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-				<meta charset="UTF-8" />
+				<meta charSet="UTF-8" />
 			</Head>
 			<h1>Welcome to Liftbridge</h1>
 		</div>

@@ -5,7 +5,9 @@ const MenuCard = ({ menu }) => {
 	console.log(menu);
 	return (
 		<div>
-			<h1>{menu.title}</h1>
+			<Link href={`/menu/${menu.sheetName}`}>
+				<h1>{menu.title}</h1>
+			</Link>
 		</div>
 	);
 };

@@ -168,7 +168,7 @@ export const getSpecialtyMenu = async (sheet) => {
 			range: sheet, // sheet name
 		});
 
-		const rows = response.data;
+		const rows = response.data.values;
 
 		if (rows.length) {
 			let priceList = [];
@@ -218,7 +218,6 @@ export const getBlendedMenu = async (sheet) => {
 		});
 
 		const rows = response.data.values;
-
 		if (rows.length) {
 			let pageDescription = rows[0][1];
 			let title = rows[1][0];
