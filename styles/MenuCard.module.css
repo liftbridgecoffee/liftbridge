@@ -15,51 +15,56 @@
 	flex-direction: row;
 	align-content: center;
 	justify-content: space-evenly;
-	align-items:center;
+	align-items: center;
 	margin: auto;
 	max-width: 1100px;
 	min-width: 45vw;
 	height: fit-content;
+	padding-bottom: 2em;
+	padding-top: 2em;
 }
 
 /*! Large Menu Card stylesheet */
 
 .foundation {
-    display: flex;
+	display: flex;
 	width: 25ch;
 	height: 25ch;
-	border: 1px solid black;
 	margin: 1em;
+	border-radius: 2%;
+	box-shadow: 1px 1px 0.7rem #030000aa;
 }
 
 .image {
-    position: absolute;
-    z-index: 0;
+	position: absolute;
+	z-index: 0;
 	width: 100% !important;
 	height: 100% !important;
+	border-radius: 2%;
 }
 
 .overlay {
-    position: absolute;
-    z-index: 10;
+	position: absolute;
+	z-index: 10;
 	width: 25ch;
 	height: 25ch;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-    /*! OVERLAYCOLOR */
-    background-image: radial-gradient(
-		rgba(253, 251, 229, 0.571),
-		rgba(0, 0, 0, 0.585)
+	/*! OVERLAYCOLOR */
+	background-image: radial-gradient(
+		rgba(253, 251, 229, 0.277),
+		rgba(0, 0, 0, 0.688)
 	);
+	border-radius: 2%;
 }
 
 .label {
-    z-index: 1;
+	z-index: 1;
 	max-width: 100%;
 	margin: auto;
 	text-align: center;
-    color: white;
-    font-family: playlist;
-    font-size: 2.5em;
+	color: white;
+	font-family: playlist;
+	font-size: 2.5em;
 }

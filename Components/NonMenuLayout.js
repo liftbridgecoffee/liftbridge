@@ -1,6 +1,6 @@
 //! Non Menu Layout(menu-index and about)
 import Image from "next/image";
-import nonMLStyles from "../styles/nonMenuLayout.module.css";
+import nonMLStyles from "../styles/NonMenuLayout.module.css";
 import longEspresso from "../public/longEspresso.jpg";
 import longlb from "../public/longlb.jpg";
 import lbwhite from "../public/lbwhite.png";
@@ -42,8 +42,12 @@ const NonMenuLayout = ({ children, name }) => {
 				</div>
 			</header>
 			<div className={nonMLStyles.baseContainer}>
-				<h1 className={nonMLStyles.h1}>{title}</h1>
-				<>{children}</>
+				<span className={nonMLStyles.innerBaseContainer}>
+					<>
+						{/* <h1 className={nonMLStyles.h1}>{title}</h1> */}
+						<>{children}</>
+					</>
+				</span>
 			</div>
 			<div className={nonMLStyles.bottom}>
 				<Image
