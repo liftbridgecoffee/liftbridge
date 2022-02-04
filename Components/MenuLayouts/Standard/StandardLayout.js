@@ -37,7 +37,6 @@ const StandardLayout = ({ menu, children, name }) => {
 						alt="Espresso coffee"
 						quality={100}
 						src={topPhoto}
-						layout="responsive"
 						placeholder="blur"
 						layout="fill"
 						objectFit="cover"

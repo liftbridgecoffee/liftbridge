@@ -1,23 +1,37 @@
 import MenuCard from "../../Components/MenuComponents/MenuCard";
 import { makeAPICall } from "../api";
+import NonMenuLayout from "../../Components/NonMenuLayout";
+
+import { withRouter } from 'next/router'
+
+
+import nonMLStyles from "../../styles/MenuLayout.module.css";
+import mCardStyle from "../../styles/MenuCard.module.css";
 
 const menu = ({ menuTitles }) => {
+	
 	return (
-		<div>
-			<>
-				{menuTitles.menus.map((menu, index) => {
-					return <MenuCard key={`${menu.title}MenuCard${index}`} menu={menu} />;
-				})}
-			</>
-		</div>
+		<NonMenuLayout >
+			<section className={mCardStyle.LargeOuterContainer}>
+				<>
+					{menuTitles.menus.map((menu, index) => {
+						return (
+							<MenuCard key={`${menu.title}MenuCard${index}`} menu={menu} />
+						);
+					})}
+				</>
+			</section>
+		</NonMenuLayout>
 	);
 };
 
 export async function getStaticProps() {
 	const menuTitles = await makeAPICall("names");
+	
 	return {
 		props: {
 			menuTitles,
+			
 		},
 	};
 }
