@@ -57,6 +57,24 @@
 		rgba(0, 0, 0, 0.688)
 	);
 	border-radius: 2%;
+	
+}
+
+.overlay:hover {
+	background-image: radial-gradient(
+		rgba(253, 251, 229, 0.16),
+		rgba(0, 0, 0, 0.517)
+	);
+	transition: all 1s;
+	
+
+	
+}
+
+.foundation:hover {
+	box-shadow: 1px 1px 0.8rem #030000bd;
+	transition: all .5s;
+
 }
 
 .label {
@@ -64,7 +82,14 @@
 	max-width: 100%;
 	margin: auto;
 	text-align: center;
-	color: white;
+	color: rgb(255, 255, 255);
 	font-family: playlist;
 	font-size: 2.5em;
+}
+
+.overlay:hover .label{
+	color: rgb(255, 255, 255);
+	font-size: 2.51em;
+	transition: all .5s;
+	text-shadow: rgba(0, 0, 0, 0.749);
 }

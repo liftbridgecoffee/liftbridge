@@ -17,6 +17,13 @@
 	width: 30vw;
 }
 
+.lblogo {
+	opacity: 0.8;
+}
+.lblogo:hover {
+	opacity: 100;
+}
+
 .header {
 	display: flex;
 	flex-direction: column;

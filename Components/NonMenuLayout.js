@@ -9,7 +9,7 @@ import thstbridgedark from "../public/thstbridgedark.png";
 const NonMenuLayout = ({ children, name }) => {
 	let topPhoto = longEspresso;
 	let bottomPhoto = thstbridgedark;
-	let title = "Menu List";
+	// let title = "Menu List";
 
 	switch (name) {
 		case "menu":
@@ -36,18 +36,20 @@ const NonMenuLayout = ({ children, name }) => {
 					/>
 					<span className={nonMLStyles.imageOverlayTop}>
 						<span className={nonMLStyles.lblogoframe}>
-							<Image alt="Lift Bridge logo" quality={100} src={lbwhite} />
+							
+							<Image alt="Lift Bridge logo" quality={100} src={lbwhite} className={nonMLStyles.lblogo}/>
+							
 						</span>
 					</span>
 				</div>
 			</header>
 			<div className={nonMLStyles.baseContainer}>
-				<span className={nonMLStyles.innerBaseContainer}>
+				<div className={nonMLStyles.innerBaseContainer}>
 					<>
 						{/* <h1 className={nonMLStyles.h1}>{title}</h1> */}
 						<>{children}</>
 					</>
-				</span>
+				</div>
 			</div>
 			<div className={nonMLStyles.bottom}>
 				<Image

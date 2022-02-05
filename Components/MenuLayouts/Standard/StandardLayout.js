@@ -6,10 +6,11 @@ import longEspresso from "../../../public/longEspresso.jpg";
 import longlb from "../../../public/longlb.jpg";
 import lbwhite from "../../../public/lbwhite.png";
 import thstbridgedark from "../../../public/thstbridgedark.png";
-import BaconBurrito from "../../../public/BaconBurrito.png"
-import bottle from "../../../public/LiftBridgeCoffeeManifesto.png"
-import bbcoffee from "../../../public/bbcoffee1.png"
-import manifestos from "../../../public/manifestospng.png"
+import BaconBurrito from "../../../public/BaconBurrito.png";
+import bottle from "../../../public/LiftBridgeCoffeeManifesto.png";
+import bbcoffee from "../../../public/bbcoffee1.png";
+import manifestos from "../../../public/manifestospng.png";
+
 const StandardLayout = ({ menu, children, name }) => {
 	let topPhoto = longEspresso;
 	let bottomPhoto = menuFoot;
@@ -18,13 +19,13 @@ const StandardLayout = ({ menu, children, name }) => {
 			break;
 		case "food":
 			topPhoto = longlb;
-			bottomPhoto = BaconBurrito
+			bottomPhoto = BaconBurrito;
 			break;
 		case "bottled":
-			topPhoto = bbcoffee
+			topPhoto = bbcoffee;
 			break;
 		case "catering":
-			bottomPhoto = thstbridgedark
+			bottomPhoto = thstbridgedark;
 			break;
 		default:
 			break;
@@ -34,6 +35,7 @@ const StandardLayout = ({ menu, children, name }) => {
 			<header className={menuStyles.menuHeader}>
 				<div className={menuStyles.headerImageContainer}>
 					<Image
+						
 						alt="Espresso coffee"
 						quality={100}
 						src={topPhoto}
@@ -44,14 +46,18 @@ const StandardLayout = ({ menu, children, name }) => {
 					/>
 					<span className={menuStyles.menuImageOverlayTop}>
 						<span className={menuStyles.lblogoframe}>
-							<Image alt="Lift Bridge logo" quality={100} src={lbwhite} />
+							
+							<Image alt="Lift Bridge logo" quality={100} src={lbwhite} className={menuStyles.lblogo}/>
+							
 						</span>
 					</span>
 				</div>
 			</header>
 			<div className={menuStyles.baseContainer}>
-				<h1 className={menuStyles.h1}>{menu.title}</h1>
-				<section>{children}</section>
+				<div className={menuStyles.innerBaseContainer}>
+					<h1 className={menuStyles.h1}>{menu.title}</h1>
+					<section>{children}</section>
+				</div>
 			</div>
 			<div className={menuStyles.menuBottom}>
 				<Image

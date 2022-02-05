@@ -16,6 +16,12 @@
 	height: 20vw;
 	width: 30vw;
 }
+.lblogo {
+	opacity: 0.8;
+}
+.lblogo:hover {
+	opacity: 100;
+}
 
 .menuHeader {
 	display: flex;
@@ -73,12 +79,27 @@
 	list-style: none;
 }
 .baseContainer {
+	padding-top: 1em;
 	width: 100%;
 	padding-block-end: 4rem;
 	box-shadow: 0px 0px 3rem 10px #030000, inset -75px -75px 25px -85px #000000,
 		inset 75px 75px 25px -85px #000000;
 
 	z-index: 100;
+}
+.innerBaseContainer {
+	padding-bottom: 5em;
+	margin: auto;
+	/* margin: auto; */
+	display: flex;
+	flex-direction: column;
+	width: 90vw;
+	height: 90%;
+	/* border: 1px solid black; */
+	border-radius: 1%;
+	z-index: 101;
+	box-shadow: 0px 0px 3rem 10px #03000028,
+		inset -75px -75px 25px -85px #00000033, inset 75px 75px 25px -85px #00000022;
 }
 .h1 {
 	margin: auto;

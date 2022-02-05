@@ -2,10 +2,7 @@ import MenuCard from "../../Components/MenuComponents/MenuCard";
 import { makeAPICall } from "../api";
 import NonMenuLayout from "../../Components/NonMenuLayout";
 
-import { withRouter } from 'next/router'
-
-
-import nonMLStyles from "../../styles/MenuLayout.module.css";
+//import nonMLStyles from "../../styles/MenuLayout.module.css";
 import mCardStyle from "../../styles/MenuCard.module.css";
 
 const menu = ({ menuTitles }) => {
