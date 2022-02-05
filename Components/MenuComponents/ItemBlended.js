@@ -11,7 +11,7 @@ const ItemBlended = ({ item, type }) => {
 				</article>
 			) : (
 				<article className={menuStyles.menuLayout}>
-					<p>
+					<p className={menuStyles.blendedAddon}>
 						<span>{item}</span>
 					</p>
 				</article>

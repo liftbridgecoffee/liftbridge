@@ -185,3 +185,41 @@
 	font-weight: bold;
 	font-size: clamp(1rem, 1.5rem, 2rem);
 }
+
+/*! Blended Menu */
+.SubTitle {
+	color: white;
+	background-color: black;
+	padding: 0.25em 2em;
+}
+.BlendedSubContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.BlendedPrice {
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 1em;
+}
+.priceSizeBlended {
+	margin: auto;
+	font-family: glacial indifference;
+	font-size: clamp(1rem, 1.5rem, 2rem);
+	letter-spacing: 0.1rem;
+}
+
+.blendedAddon {
+	padding-top: 1em;
+}
+.BlendedContainer{
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: auto;
+	justify-content: center;
+	align-content: flex-start;
+	align-items: flex-start;
+}

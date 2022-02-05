@@ -1,15 +1,19 @@
 import PriceSize from "../../MenuComponents/PriceSize";
 import ItemBlended from "../../MenuComponents/ItemBlended";
 
+import MenuStyles from "../../../styles/MenuLayout.module.css";
+
 const Blended = ({ menu }) => {
 	console.log(menu);
 	return (
-		<>
-			<section>
-				<h2>Frappe</h2>
-				<div>
+		<div className={MenuStyles.BlendedContainer}>
+			<section className={MenuStyles.BlendedSubContainer}>
+				<h2 className={MenuStyles.SubTitle}>Frappe</h2>
+				<div className={MenuStyles.BlendedPrice}>
 					{menu.frappe.prices.map((p, index) => {
-						return <PriceSize key={`${index}_price`} price={p} />;
+						return (
+							<PriceSize key={`${index}_price`} price={p} type={"Blended"} />
+						);
 					})}
 				</div>
 				<div>
@@ -27,11 +31,13 @@ const Blended = ({ menu }) => {
 					})}
 				</div>
 			</section>
-			<section>
-				<h2>Smoothie</h2>
-				<div>
-					{menu.smoothie.prices.map((p, index) => {
-						return <PriceSize key={`${index}_price`} price={p} />;
+			<section className={MenuStyles.BlendedSubContainer}>
+				<h2 className={MenuStyles.SubTitle}>Smoothie</h2>
+				<div className={MenuStyles.BlendedPrice}>
+						{menu.smoothie.prices.map((p, index) => {
+						return (
+							<PriceSize key={`${index}_price`} price={p} type={"Blended"} />
+						);
 					})}
 				</div>
 				<div>
@@ -49,7 +55,7 @@ const Blended = ({ menu }) => {
 					})}
 				</div>
 			</section>
-		</>
+		</div>
 	);
 };
 

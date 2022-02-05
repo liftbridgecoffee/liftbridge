@@ -1,12 +1,14 @@
 import React from "react";
 import menuStyles from "../../styles/MenuLayout.module.css";
 
-const PriceSize = ({ price, side }) => {
+const PriceSize = ({ price, type }) => {
 	return (
 		<>
-			<span className={menuStyles.priceSize}>
-				{price}
-			</span>
+			{type == "Standard" ? (
+				<span className={menuStyles.priceSize}>{price}</span>
+			) : (
+				<span className={menuStyles.priceSizeBlended}>{price}</span>
+			)}
 		</>
 	);
 };
