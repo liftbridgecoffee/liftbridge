@@ -36,9 +36,12 @@ const NonMenuLayout = ({ children, name }) => {
 					/>
 					<span className={nonMLStyles.imageOverlayTop}>
 						<span className={nonMLStyles.lblogoframe}>
-							
-							<Image alt="Lift Bridge logo" quality={100} src={lbwhite} className={nonMLStyles.lblogo}/>
-							
+							<Image
+								alt="Lift Bridge logo"
+								quality={100}
+								src={lbwhite}
+								className={nonMLStyles.lblogo}
+							/>
 						</span>
 					</span>
 				</div>

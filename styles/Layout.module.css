@@ -6,6 +6,12 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
+	transition: ease-in-out 1s;
+}
+
+.mainOnInit {
+	min-height: 10vh;
+	transition: ease-in-out 1s;
 }
 
 .footer {
