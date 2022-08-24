@@ -1,8 +1,8 @@
 //!Base Menu Layout
 import Image from "next/image";
 import menuStyles from "../../../styles/MenuLayout.module.css";
-import menuFoot from "../../../public/menuBottom1.jpg";
-import longEspresso from "../../../public/longEspresso.jpg";
+import menuFoot from "../../../public/mMenuBottom1.jpg";
+import longEspresso from "../../../public/lLongEspresso.jpg";
 import longlb from "../../../public/longlb.jpg";
 import lbwhite from "../../../public/lbwhite.png";
 import thstbridgedark from "../../../public/thstbridgedark.png";
