@@ -29,19 +29,23 @@ export default function Home({}) {
 		<>
 			<NonMenuLayout>
 				{/* <section className={mCardStyle.LargeOuterContainer}> */}
-					<div className={homeStyle.contentHolder}>
-						<Image
-							src={lBA}
-							className={homeStyle.image}
-							alt="Lift Bridge Coffee"
-							quality={100}
-							objectFit="cover"
-						/>
-						<div className={homeStyle.centerContentContainer} id="dude">
-							<span className={homeStyle.option}>Menus</span>
-							<span className={homeStyle.option}>Who We Are</span>
-						</div>
+				<div className={homeStyle.contentHolder}>
+					<Image
+						src={lBA}
+						className={homeStyle.image}
+						alt="Lift Bridge Coffee"
+						quality={100}
+						objectFit="cover"
+					/>
+					<div className={homeStyle.centerContentContainer} id="dude">
+						<span className={homeStyle.option}>
+							<h1 className={homeStyle.title}>Menus</h1>
+						</span>
+						<span className={homeStyle.option}>
+							<h1 className={homeStyle.title}>Who We Are</h1>
+						</span>
 					</div>
+				</div>
 				{/* </section> */}
 			</NonMenuLayout>
 		</>
