@@ -17,7 +17,7 @@ const Nav = () => {
 					<Link href="/menu">Menus</Link>
 				</li>
 			</ul>
-			{/* <a
+			{/*  <a
 				href="/"
 				className={`sandwich${open}`}
 				onClick={(e) => {
