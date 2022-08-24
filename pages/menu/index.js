@@ -6,9 +6,8 @@ import NonMenuLayout from "../../Components/NonMenuLayout";
 import mCardStyle from "../../styles/MenuCard.module.css";
 
 const menu = ({ menuTitles }) => {
-	
 	return (
-		<NonMenuLayout >
+		<NonMenuLayout>
 			<section className={mCardStyle.LargeOuterContainer}>
 				<>
 					{menuTitles.menus.map((menu, index) => {
@@ -24,11 +23,10 @@ const menu = ({ menuTitles }) => {
 
 export async function getStaticProps() {
 	const menuTitles = await makeAPICall("names");
-	
+
 	return {
 		props: {
 			menuTitles,
-			
 		},
 	};
 }

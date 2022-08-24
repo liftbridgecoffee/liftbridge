@@ -35,7 +35,6 @@ const StandardLayout = ({ menu, children, name }) => {
 			<header className={menuStyles.menuHeader}>
 				<div className={menuStyles.headerImageContainer}>
 					<Image
-						
 						alt="Espresso coffee"
 						quality={100}
 						src={topPhoto}
@@ -46,9 +45,12 @@ const StandardLayout = ({ menu, children, name }) => {
 					/>
 					<span className={menuStyles.menuImageOverlayTop}>
 						<span className={menuStyles.lblogoframe}>
-							
-							<Image alt="Lift Bridge logo" quality={100} src={lbwhite} className={menuStyles.lblogo}/>
-							
+							<Image
+								alt="Lift Bridge logo"
+								quality={100}
+								src={lbwhite}
+								className={menuStyles.lblogo}
+							/>
 						</span>
 					</span>
 				</div>
