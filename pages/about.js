@@ -2,7 +2,7 @@ import homeStyle from "../styles/HomeStyle.module.css";
 import NonMenuLayout from "../Components/NonMenuLayout";
 import { useEffect } from "react";
 
-const about = () => {
+const About = () => {
 	useEffect(() => {
 		let main = document.querySelector("main");
 		main.style.minHeight = "1vh";
@@ -22,4 +22,4 @@ const about = () => {
 		</>
 	);
 };
-export default about;
+export default About;
