@@ -1,7 +1,7 @@
 //! Non Menu Layout(menu-index and about)
 import Image from "next/image";
 import nonMLStyles from "../styles/NonMenuLayout.module.css";
-import longEspresso from "../public/longEspresso.jpg";
+import longEspresso from "../public/lLongEspresso.jpg";
 import longlb from "../public/longlb.jpg";
 import lbwhite from "../public/lbwhite.png";
 import thstbridgedark from "../public/thstbridgedark.png";
