@@ -8,11 +8,17 @@ import vb from "../public/LargeVeggieBurrito.jpg";
 import homeStyle from "../styles/HomeStyle.module.css";
 import generalStyle from "../styles/Layout.module.css";
 import lBA from "../public/liftBridgeAbby.png";
+import thstbridgedark from "../public/thstbridgedark.png";
+import nonMLStyles from "../styles/NonMenuLayout.module.css";
+import NonMenuLayout from "../Components/NonMenuLayout";
+import mCardStyle from "../styles/MenuCard.module.css";
 
 export default function Home({}) {
 	useEffect(() => {
 		let main = document.querySelector("main");
 		main.style.minHeight = "1vh";
+
+		// main.style.marginBottom = "-10px";
 
 		return () => {
 			main.style.minHeight = "100vh";
@@ -21,13 +27,23 @@ export default function Home({}) {
 
 	return (
 		<>
-			<Image
-				src={vb}
-				className={homeStyle.image}
-				alt="Lift Bridge Coffee"
-				quality={100}
-				objectFit="cover"
-			/>
+			<NonMenuLayout>
+				{/* <section className={mCardStyle.LargeOuterContainer}> */}
+					<div className={homeStyle.contentHolder}>
+						<Image
+							src={lBA}
+							className={homeStyle.image}
+							alt="Lift Bridge Coffee"
+							quality={100}
+							objectFit="cover"
+						/>
+						<div className={homeStyle.centerContentContainer} id="dude">
+							<span className={homeStyle.option}>Menus</span>
+							<span className={homeStyle.option}>Who We Are</span>
+						</div>
+					</div>
+				{/* </section> */}
+			</NonMenuLayout>
 		</>
 	);
 }
