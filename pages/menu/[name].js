@@ -153,11 +153,11 @@ const MenuDisplayPage = ({ menu, name }) => {
 };
 
 export async function getStaticProps({ params }) {
-	const menu = await makeAPICall(params?.name);
+	//const menu = await makeAPICall(params?.name);
 	return {
 		props: {
-			menu,
-			name: params?.name,
+			menu: "test",
+			name: "test",
 		},
 	};
 }
