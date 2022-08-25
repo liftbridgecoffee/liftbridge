@@ -54,10 +54,10 @@ const MenuDisplayPage = ({ menu, name }) => {
 		}
 	};
 
-	const router = useRouter();
-	if (!router.isFallback && !menu) {
-		return <ErrorPage statusCode={404} />;
-	}
+	// const router = useRouter();
+	// if (!router.isFallback && !menu) {
+	// 	return <ErrorPage statusCode={404} />;
+	// }
 	return (
 		<>
 			<MenuPageHead menu={menu} />
@@ -86,7 +86,7 @@ export async function getStaticPaths() {
 			"/menu/bottled",
 			"/menu/catering",
 		],
-		fallback: false,
+		fallback: `blocking`,
 	};
 }
 export default MenuDisplayPage;
