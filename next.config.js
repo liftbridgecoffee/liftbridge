@@ -3,6 +3,8 @@ module.exports = {
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
+};
+module.exports = {
 	webpack: (config) => {
 		config.node = {
 			fs: "empty",
