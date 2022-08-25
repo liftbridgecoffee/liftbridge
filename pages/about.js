@@ -17,7 +17,7 @@ const About = () => {
 	return (
 		<>
 			<NonMenuLayout>
-				We're still figuring that out ourselves... come back soon
+				We are still figuring that out ourselves... come back soon
 			</NonMenuLayout>
 		</>
 	);

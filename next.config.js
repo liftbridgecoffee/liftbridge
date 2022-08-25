@@ -1,9 +1,9 @@
-module.exports = {
-	reactStrictMode: true,
-	eslint: {
-		ignoreDuringBuilds: true,
-	},
-};
+// module.exports = {
+// 	reactStrictMode: true,
+// 	eslint: {
+// 		ignoreDuringBuilds: true,
+// 	},
+// };
 module.exports = {
 	webpack: (config) => {
 		config.node = {
