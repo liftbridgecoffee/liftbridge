@@ -2,7 +2,7 @@ import { makeAPICall } from "../api";
 
 import StandardLayout from "../../Components/MenuLayouts/Standard/StandardLayout";
 import Specialty from "../../Components/MenuLayouts/Standard/Specialty";
-//import Seasonal from "../../Components/MenuLayouts/Seasonal/Winter";
+import Seasonal from "../../Components/MenuLayouts/Seasonal/Winter";
 import Blended from "../../Components/MenuLayouts/Standard/Blended";
 import Bottled from "../../Components/MenuLayouts/Standard/Bottled";
 import Catering from "../../Components/MenuLayouts/Standard/Catering";
@@ -18,12 +18,12 @@ const MenuDisplayPage = ({ menu, name }) => {
 						<Specialty menu={menu} />
 					</StandardLayout>
 				);
-			// case "seasonal":
-			// 	return (
-			// 		<StandardLayout name={name} menu={menu}>
-			// 			<Seasonal menu={menu} />
-			// 		</StandardLayout>
-			// 	);
+			case "seasonal":
+				return (
+					<StandardLayout name={name} menu={menu}>
+						<Seasonal menu={menu} />
+					</StandardLayout>
+				);
 			case "food":
 				return (
 					<StandardLayout name={name} menu={menu}>
@@ -73,13 +73,13 @@ export async function getStaticPaths() {
 	return {
 		paths: [
 			"/menu/specialty-drinks",
-			// "/menu/seasonal",
+			"/menu/seasonal",
 			"/menu/food",
 			"/menu/blended",
 			"/menu/bottled",
 			"/menu/catering",
 		],
-		fallback: `blocking`,
+		fallback: false,
 	};
 }
 export default MenuDisplayPage;
