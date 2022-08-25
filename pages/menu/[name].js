@@ -157,7 +157,7 @@ export async function getStaticProps({ params }) {
 	return {
 		props: {
 			menu,
-			name: params.name,
+			name: params?.name,
 		},
 	};
 }
