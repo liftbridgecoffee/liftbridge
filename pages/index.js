@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 // import { useEffect } from "react/cjs/react.production.min";
 import { useEffect } from "react";
@@ -39,10 +40,14 @@ export default function Home({}) {
 					/>
 					<div className={homeStyle.centerContentContainer} id="dude">
 						<span className={homeStyle.option}>
-							<h1 className={homeStyle.title}>Menus</h1>
+							<h1 className={homeStyle.title}>
+								<Link href="menu">Menus</Link>
+							</h1>
 						</span>
 						<span className={homeStyle.option}>
-							<h1 className={homeStyle.title}>Who We Are</h1>
+							<h1 className={homeStyle.title}>
+								<Link href="about">Who We Are</Link>
+							</h1>
 						</span>
 					</div>
 				</div>
