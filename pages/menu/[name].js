@@ -1,4 +1,7 @@
 import { makeAPICall } from "../api";
+import { useRouter } from "next/router";
+
+import ErrorPage from "next/error";
 
 import StandardLayout from "../../Components/MenuLayouts/Standard/StandardLayout";
 import Specialty from "../../Components/MenuLayouts/Standard/Specialty";
@@ -51,6 +54,10 @@ const MenuDisplayPage = ({ menu, name }) => {
 		}
 	};
 
+	const router = useRouter();
+	if (!router.isFallback && !menu) {
+		return <ErrorPage statusCode={404} />;
+	}
 	return (
 		<>
 			<MenuPageHead menu={menu} />
