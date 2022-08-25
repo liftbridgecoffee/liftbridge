@@ -83,7 +83,6 @@
 .option {
 	display: flex;
 	width: -webkit-fill-available;
-	height: -webkit-fill-available;
 	align-items: center;
 	justify-content: center;
 	align-content: stretch;
