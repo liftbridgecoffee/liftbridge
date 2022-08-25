@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 
 // import { useEffect } from "react/cjs/react.production.min";
-import { useEffect } from "react/cjs/react.development";
+import { useEffect } from "react";
 import cover from "../public/coverMain.jpg";
 import vb from "../public/LargeVeggieBurrito.jpg";
 import homeStyle from "../styles/HomeStyle.module.css";
