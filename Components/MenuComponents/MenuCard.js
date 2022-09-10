@@ -10,7 +10,7 @@ import blendedCover from "../../public/blendedCover.jpg";
 
 import mCardStyle from "../../styles/MenuCard.module.css";
 
-const MenuCard = ({ menu }) => {
+const MenuCard = ({ menu, closeMenu }) => {
 	const title = menu.title.toUpperCase();
 	let cover = bottledCover;
 

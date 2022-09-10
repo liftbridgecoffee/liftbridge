@@ -56,6 +56,18 @@ export const getMenuNames = async () => {
 	}
 };
 
+export const getMenuNamesMock = () => {
+	return {
+		menus: [
+			{ sheetName: "specialty-drinks", title: "specialty drinks" },
+			{ sheetName: "food", title: "food" },
+			{ sheetName: "seasonal", title: "seasonal" },
+			{ sheetName: "catering", title: "catering" },
+			{ sheetName: "blended", title: "blended" },
+		],
+	};
+};
+
 export const getCateringMenu = async (sheet) => {
 	try {
 		const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
