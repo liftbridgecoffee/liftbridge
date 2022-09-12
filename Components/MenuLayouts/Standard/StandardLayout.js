@@ -10,6 +10,7 @@ import BaconBurrito from "../../../public/BaconBurrito.png";
 import bottle from "../../../public/LiftBridgeCoffeeManifesto.png";
 import bbcoffee from "../../../public/bbcoffee1.png";
 import manifestos from "../../../public/manifestospng.png";
+import EditButton from "../../MenuComponents/EditButton";
 
 const StandardLayout = ({ menu, children, name }) => {
 	let topPhoto = longEspresso;
@@ -57,6 +58,7 @@ const StandardLayout = ({ menu, children, name }) => {
 			</header>
 			<div className={menuStyles.baseContainer}>
 				<div className={menuStyles.innerBaseContainer}>
+					<EditButton />
 					<h1 className={menuStyles.h1}>{menu.title}</h1>
 					<section>{children}</section>
 				</div>

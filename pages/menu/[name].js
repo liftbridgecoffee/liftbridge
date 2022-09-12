@@ -4,7 +4,8 @@ import { useRouter } from "next/router";
 import ErrorPage from "next/error";
 
 import StandardLayout from "../../Components/MenuLayouts/Standard/StandardLayout";
-import Specialty from "../../Components/MenuLayouts/Standard/Specialty";
+// import Specialty from "../../Components/MenuLayouts/Standard/Specialty";
+import Specialty from "../../Components/MenuLayouts/Standard/SpecialtyTest";
 import Seasonal from "../../Components/MenuLayouts/Seasonal/Winter";
 import Blended from "../../Components/MenuLayouts/Standard/Blended";
 import Bottled from "../../Components/MenuLayouts/Standard/Bottled";
@@ -69,6 +70,7 @@ export async function getStaticProps({ params }) {
 			menu,
 			name: params.name,
 		},
+		revalidate: 10, // In seconds
 	};
 }
 

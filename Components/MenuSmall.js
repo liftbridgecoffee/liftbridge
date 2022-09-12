@@ -3,7 +3,6 @@ import MenuCard from "./MenuComponents/MenuCard";
 const MenuSmall = ({ menuTitles, closeMenu }) => {
 	return (
 		<>
-			{console.log(menuTitles)}
 			<div className="smallMenu-inner">
 				{menuTitles.menus.map((menu, index) => {
 					return (
