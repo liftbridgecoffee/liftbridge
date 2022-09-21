@@ -39,7 +39,9 @@ const About = ({ footer, about }) => {
 						if (index == 1) {
 							return (
 								<div key={`contact${index}`}>
-									<h1 key={`title${index}`}>{item.line1} </h1>
+									<h1 className={aboutStyle.title} key={`title${index}`}>
+										{item.line1}{" "}
+									</h1>
 									<p key={`p${index}`}>{item.line2}</p>
 									<div
 										key={`cs${index}`}
@@ -76,7 +78,9 @@ const About = ({ footer, about }) => {
 						} else {
 							return (
 								<div key={`about${index}`}>
-									<h1 key={`title${index}`}>{item.line1}</h1>
+									<h1 className={aboutStyle.title} key={`title${index}`}>
+										{item.line1}
+									</h1>
 									<a
 										href="https://www.instagram.com/liftbridgecoffee/?hl=en"
 										className={aboutStyle.socials}
