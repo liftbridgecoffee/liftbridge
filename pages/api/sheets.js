@@ -357,3 +357,98 @@ export const getSeasonalDrinks = async (sheet) => {
 		return err;
 	}
 };
+
+export const getFooter = async (sheet) => {
+	try {
+		const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
+		const jwt = new google.auth.JWT(
+			process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+			null,
+			(process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
+			target
+		);
+
+		const sheets = google.sheets({ version: "v4", auth: jwt });
+		const response = await sheets.spreadsheets.values.get({
+			spreadsheetId: process.env.SPREADSHEET_ID,
+			range: sheet, // sheet name
+		});
+
+		const rows = response.data.values;
+
+		if (rows.length) {
+			return {
+				pageDescription: rows[0][1],
+				title: rows[1][0],
+				items: rows.slice(3).map((row) => {
+					let newRow = row.map((column) => {
+						let newColumn = column;
+						if (newColumn.includes("::")) {
+							newColumn = column.split("::").join("\n");
+						}
+						if (newColumn.includes("null")) {
+							newColumn = "";
+						}
+						return newColumn;
+					});
+					let line1 = newRow[0];
+					let line2 = newRow[1];
+					let line3 = newRow[2];
+					let line4 = newRow[3];
+					let line5 = newRow[4];
+					return { line1, line2, line3, line4, line5 };
+				}),
+			};
+		}
+	} catch (err) {
+		return err;
+	}
+};
+export const getAbout = async (sheet) => {
+	try {
+		const target = ["https://www.googleapis.com/auth/spreadsheets.readonly"];
+		const jwt = new google.auth.JWT(
+			process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+			null,
+			(process.env.GOOGLE_SHEETS_PRIVATE_KEY || "").replace(/\\n/g, "\n"),
+			target
+		);
+
+		const sheets = google.sheets({ version: "v4", auth: jwt });
+		const response = await sheets.spreadsheets.values.get({
+			spreadsheetId: process.env.SPREADSHEET_ID,
+			range: sheet, // sheet name
+		});
+
+		const rows = response.data.values;
+
+		if (rows.length) {
+			return {
+				pageDescription: rows[0][1],
+				title: rows[1][0],
+				items: rows.slice(3).map((row) => {
+					let newRow = row.map((column) => {
+						let newColumn = column;
+						if (newColumn.includes("::")) {
+							newColumn = column.split("::").join("\n");
+						}
+						if (newColumn.includes("null")) {
+							newColumn = "";
+						}
+						return newColumn;
+					});
+					let line1 = newRow[0];
+					let line2 = newRow[1];
+					let line3 = newRow[2];
+					let line4 = newRow[3];
+					let line5 = newRow[4];
+					let line6 = newRow[5];
+					let line7 = newRow[6];
+					return { line1, line2, line3, line4, line5, line6, line7 };
+				}),
+			};
+		}
+	} catch (err) {
+		return err;
+	}
+};

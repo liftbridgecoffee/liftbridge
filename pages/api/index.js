@@ -6,6 +6,8 @@ import {
 	getSeasonalDrinks,
 	getSpecialtyMenu,
 	getMenuNames,
+	getFooter,
+	getAbout,
 	// getMenuNamesMock,
 } from "./sheets";
 
@@ -26,5 +28,9 @@ export const makeAPICall = (sheet) => {
 			return getBottledMenu(sheet);
 		case "catering":
 			return getCateringMenu(sheet);
+		case "footer":
+			return getFooter(sheet);
+		case "about":
+			return getAbout(sheet);
 	}
 };
