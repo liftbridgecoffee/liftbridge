@@ -15,6 +15,7 @@ import thstbridgedark from "../public/thstbridgedark.png";
 import nonMLStyles from "../styles/NonMenuLayout.module.css";
 import NonMenuLayout from "../Components/NonMenuLayout";
 import mCardStyle from "../styles/MenuCard.module.css";
+import MenuPageHead from "../Components/MenuPageHead";
 
 export default function Home({ footer }) {
 	useEffect(() => {
@@ -26,6 +27,7 @@ export default function Home({ footer }) {
 	}, []);
 	return (
 		<>
+		<MenuPageHead menu={{ title: "", description: "Liftbridge Coffee - Great Tacoma Beans" }} />
 			<NonMenuLayout footer={footer}>
 				{/* <section className={mCardStyle.LargeOuterContainer}> */}
 				<div className={homeStyle.contentHolder}>

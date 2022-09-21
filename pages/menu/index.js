@@ -4,20 +4,24 @@ import NonMenuLayout from "../../Components/NonMenuLayout";
 
 //import nonMLStyles from "../../styles/MenuLayout.module.css";
 import mCardStyle from "../../styles/MenuCard.module.css";
+import MenuPageHead from "../../Components/MenuPageHead";
 
 const menu = ({ menuTitles, footer }) => {
 	return (
-		<NonMenuLayout footer={footer}>
-			<section className={mCardStyle.LargeOuterContainer}>
-				<>
-					{menuTitles.menus.map((menu, index) => {
-						return (
-							<MenuCard key={`${menu.title}MenuCard${index}`} menu={menu} />
-						);
-					})}
-				</>
-			</section>
-		</NonMenuLayout>
+		<>
+			<MenuPageHead menu={{ title: "", description: "all menus" }} />
+			<NonMenuLayout footer={footer}>
+				<section className={mCardStyle.LargeOuterContainer}>
+					<>
+						{menuTitles.menus.map((menu, index) => {
+							return (
+								<MenuCard key={`${menu.title}MenuCard${index}`} menu={menu} />
+							);
+						})}
+					</>
+				</section>
+			</NonMenuLayout>
+		</>
 	);
 };
 
