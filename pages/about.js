@@ -33,6 +33,7 @@ const About = ({ footer, about }) => {
 
 	return (
 		<>
+		<MenuPageHead menu={{ title: "", description: "about us" }} />
 			<NonMenuLayout footer={footer}>
 				<section className={aboutStyle.mainContainer}>
 					{about.items.map((item, index) => {
