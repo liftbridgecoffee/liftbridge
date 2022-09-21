@@ -35,3 +35,8 @@
 .navLink {
 	font-family: "glacial indifference";
 }
+
+.navLink:hover {
+	cursor: pointer;
+	font-weight: 600;
+}
