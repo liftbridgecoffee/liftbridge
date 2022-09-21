@@ -21,7 +21,8 @@ const About = ({ footer, about }) => {
 			navigator.platform.indexOf("iPad") != -1
 		)
 			window.open(
-				"maps.apple.com/?address=1102%20A%20St,%20Tacoma,%20WA%20%2098402,%20United%20States&auid=2845906120363645812&ll=47.252978,-122.437436&lsp=9902&q=Lift%20Bridge%20Coffee&_ext=CjIKBQgEEOIBCgQIBRADCgQIBhAICgQIChAACgQIUhABCgQIVRAPCgQIWRACCgUIpAEQARImKVdhjmrOn0dAMUrksl1rnF7AOdU2tMb0oEdAQXaowIeSm17AUAM%3D"
+				"https://www.google.com/maps/dir//liftbridge+coffee+google/@47.2628241,-122.4320264,13z/data=!3m1!5s0x549055a01fc79a47:0xb38d9f206b079b39!4m9!4m8!1m0!1m5!1m1!1s0x549055a01fb2f443:0x31a6011414651863!2m2!1d-122.4373955!2d47.2531655!3e0"
+				//"maps::?address=1102%20A%20St,%20Tacoma,%20WA%20%2098402,%20United%20States&auid=2845906120363645812&ll=47.252978,-122.437436&lsp=9902&q=Lift%20Bridge%20Coffee&_ext=CjIKBQgEEOIBCgQIBRADCgQIBhAICgQIChAACgQIUhABCgQIVRAPCgQIWRACCgUIpAEQARImKVdhjmrOn0dAMUrksl1rnF7AOdU2tMb0oEdAQXaowIeSm17AUAM%3D"
 				//"http://maps.apple.com/?q=Spigot+Design/dir/47.2809472,-122.3786496/liftbridge+coffee+google/@47.2628241,-122.4320264,13z/data=!3m1!5s0x549055a01fc79a47:0xb38d9f206b079b39!4m10!4m9!1m1!4e1!1m5!1m1!1s0x549055a01fb2f443:0x31a6011414651863!2m2!1d-122.4373955!2d47.2531655!3e0"
 			);
 		/* else use Google */ else
