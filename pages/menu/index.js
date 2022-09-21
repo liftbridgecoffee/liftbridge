@@ -30,6 +30,7 @@ export async function getStaticProps() {
 			menuTitles,
 			footer,
 		},
+		revalidate: 1,
 	};
 }
 

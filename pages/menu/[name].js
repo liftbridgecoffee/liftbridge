@@ -72,7 +72,7 @@ export async function getStaticProps({ params }) {
 			name: params.name,
 			footer,
 		},
-		revalidate: 10, // In seconds
+		revalidate: 1, // In seconds
 	};
 }
 
