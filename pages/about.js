@@ -1,5 +1,4 @@
-import homeStyle from "../styles/HomeStyle.module.css";
-import aboutStyle from "../styles/About.module.css";
+import aboutStyle from "../styles/AboutPage.module.css";
 import NonMenuLayout from "../Components/NonMenuLayout";
 import { useEffect } from "react";
 import { makeAPICall } from "./api";
@@ -9,9 +8,6 @@ const About = ({ footer, about }) => {
 	useEffect(() => {
 		let main = document.querySelector("main");
 		main.style.minHeight = "1vh";
-
-		// main.style.marginBottom = "-10px";
-
 		return () => {
 			main.style.minHeight = "100vh";
 		};
