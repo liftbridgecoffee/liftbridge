@@ -13,42 +13,42 @@ import Catering from "../../Components/MenuLayouts/Standard/Catering";
 import Food from "../../Components/MenuLayouts/Standard/Food";
 import MenuPageHead from "../../Components/MenuPageHead";
 
-const MenuDisplayPage = ({ menu, name }) => {
+const MenuDisplayPage = ({ menu, name, footer }) => {
 	const selectedMenuRender = (name) => {
 		switch (name) {
 			case "specialty-drinks":
 				return (
-					<StandardLayout name={name} menu={menu}>
+					<StandardLayout footer={footer} name={name} menu={menu}>
 						<Specialty menu={menu} />
 					</StandardLayout>
 				);
 			case "seasonal":
 				return (
-					<StandardLayout name={name} menu={menu}>
+					<StandardLayout footer={footer} name={name} menu={menu}>
 						<Seasonal menu={menu} />
 					</StandardLayout>
 				);
 			case "food":
 				return (
-					<StandardLayout name={name} menu={menu}>
+					<StandardLayout footer={footer} name={name} menu={menu}>
 						<Food menu={menu} />
 					</StandardLayout>
 				);
 			case "blended":
 				return (
-					<StandardLayout name={name} menu={menu}>
+					<StandardLayout footer={footer} name={name} menu={menu}>
 						<Blended menu={menu} />
 					</StandardLayout>
 				);
 			case "bottled":
 				return (
-					<StandardLayout name={name} menu={menu}>
+					<StandardLayout footer={footer} name={name} menu={menu}>
 						<Bottled menu={menu} />
 					</StandardLayout>
 				);
 			case "catering":
 				return (
-					<StandardLayout name={name} menu={menu}>
+					<StandardLayout footer={footer} name={name} menu={menu}>
 						<Catering menu={menu} />
 					</StandardLayout>
 				);
@@ -65,10 +65,12 @@ const MenuDisplayPage = ({ menu, name }) => {
 
 export async function getStaticProps({ params }) {
 	const menu = await makeAPICall(params.name);
+	const footer = await makeAPICall("footer");
 	return {
 		props: {
 			menu,
 			name: params.name,
+			footer,
 		},
 		revalidate: 10, // In seconds
 	};
@@ -108,37 +110,37 @@ export default MenuDisplayPage;
 // 		switch (name) {
 // 			case "specialty-drinks":
 // 				return (
-// 					<StandardLayout name={name} menu={menu}>
+// 					<StandardLayout footer={footer} name={name} menu={menu}>
 // 						<Specialty menu={menu} />
 // 					</StandardLayout>
 // 				);
 // 			case "seasonal":
 // 				return (
-// 					<StandardLayout name={name} menu={menu}>
+// 					<StandardLayout footer={footer} name={name} menu={menu}>
 // 						<Seasonal menu={menu} />
 // 					</StandardLayout>
 // 				);
 // 			case "food":
 // 				return (
-// 					<StandardLayout name={name} menu={menu}>
+// 					<StandardLayout footer={footer} name={name} menu={menu}>
 // 						<Food menu={menu} />
 // 					</StandardLayout>
 // 				);
 // 			case "blended":
 // 				return (
-// 					<StandardLayout name={name} menu={menu}>
+// 					<StandardLayout footer={footer} name={name} menu={menu}>
 // 						<Blended menu={menu} />
 // 					</StandardLayout>
 // 				);
 // 			case "bottled":
 // 				return (
-// 					<StandardLayout name={name} menu={menu}>
+// 					<StandardLayout footer={footer} name={name} menu={menu}>
 // 						<Bottled menu={menu} />
 // 					</StandardLayout>
 // 				);
 // 			case "catering":
 // 				return (
-// 					<StandardLayout name={name} menu={menu}>
+// 					<StandardLayout footer={footer} name={name} menu={menu}>
 // 						<Catering menu={menu} />
 // 					</StandardLayout>
 // 				);

@@ -16,6 +16,7 @@
 }
 
 .footer {
+	padding: 3em 0em 2em 0em;
 	background-color: black;
 	height: 10rem;
 	display: flex;
@@ -23,15 +24,50 @@
 	justify-content: center;
 	align-content: center;
 	align-items: center;
+	width: 100vw;
 }
 
-.footer p {
+.footerText {
 	color: rgb(194, 191, 187);
+	padding: 0.5em;
 }
 
-.footer a {
+.footerText:hover {
+	color: rgb(153, 152, 150);
+	cursor: pointer;
+}
+
+.innerContainer {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
-	flex-grow: 1;
+}
+
+.footerAddress {
+	color: rgb(194, 191, 187);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0.5em;
+}
+
+.footerAddress:hover {
+	color: rgb(153, 152, 150);
+	cursor: pointer;
+}
+
+.socials {
+	color: rgb(194, 191, 187);
+	display: flex;
+	align-items: center;
+	padding: 0.5em;
+}
+
+.socials span {
+	padding: 3px;
+}
+
+.socials:hover {
+	color: rgb(153, 152, 150);
+	cursor: pointer;
 }

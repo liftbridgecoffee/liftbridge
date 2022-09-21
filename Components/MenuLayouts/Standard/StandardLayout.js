@@ -11,8 +11,9 @@ import bottle from "../../../public/LiftBridgeCoffeeManifesto.png";
 import bbcoffee from "../../../public/bbcoffee1.png";
 import manifestos from "../../../public/manifestospng.png";
 import EditButton from "../../MenuComponents/EditButton";
+import Footer from "../../Footer";
 
-const StandardLayout = ({ menu, children, name }) => {
+const StandardLayout = ({ menu, children, name, footer }) => {
 	let topPhoto = longEspresso;
 	let bottomPhoto = menuFoot;
 	switch (name) {
@@ -75,6 +76,7 @@ const StandardLayout = ({ menu, children, name }) => {
 				/>
 				<span className={menuStyles.menuImageOverlay}></span>
 			</div>
+			<Footer footer={footer}/>
 		</>
 	);
 };

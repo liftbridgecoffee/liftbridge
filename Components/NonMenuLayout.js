@@ -6,7 +6,8 @@ import longlb from "../public/longlb.jpg";
 import lbwhite from "../public/lbwhite.png";
 import thstbridgedark from "../public/thstbridgedark.png";
 
-const NonMenuLayout = ({ children, name }) => {
+import Footer from "./Footer";
+const NonMenuLayout = ({ children, name, footer }) => {
 	let topPhoto = longEspresso;
 	let bottomPhoto = thstbridgedark;
 	// let title = "Menu List";
@@ -66,6 +67,7 @@ const NonMenuLayout = ({ children, name }) => {
 				/>
 				<span className={nonMLStyles.imageOverlay}></span>
 			</div>
+			<Footer footer={footer} />
 		</>
 	);
 };

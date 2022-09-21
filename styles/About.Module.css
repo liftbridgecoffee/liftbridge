@@ -1,0 +1,23 @@
+.addressContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.addressContainer:hover {
+	cursor: pointer;
+	color: rgb(78, 77, 77);
+}
+
+.mainContainer {
+	width: 100%;
+	padding: 1em;
+}
+
+.contactContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.contactLine {
+	padding-top: 0.5em;
+}

@@ -11,7 +11,6 @@ const Nav = () => {
 			{ sheetName: "seasonal", title: "seasonal" },
 			{ sheetName: "specialty-drinks", title: "specialty drinks" },
 			{ sheetName: "blended", title: "blended" },
-
 			{ sheetName: "food", title: "food" },
 			{ sheetName: "bottled", title: "bottled" },
 			{ sheetName: "catering", title: "catering" },
@@ -32,7 +31,9 @@ const Nav = () => {
 							setOpen(!open);
 						}}
 					>
-						<Link href="/">HOME</Link>
+						<Link href="/">
+							<span className={navStyles.navLink}>HOME</span>
+						</Link>
 					</li>
 					<li
 						onClick={(e) => {
@@ -40,7 +41,9 @@ const Nav = () => {
 							setOpen(!open);
 						}}
 					>
-						<Link href="/about">ABOUT</Link>
+						<Link href="/about">
+							<span className={navStyles.navLink}>ABOUT</span>
+						</Link>
 					</li>
 				</ul>
 			</div>

@@ -3,6 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 // import { useEffect } from "react/cjs/react.production.min";
+
+import { makeAPICall } from "./api";
 import { useEffect } from "react";
 import cover from "../public/coverMain.jpg";
 import vb from "../public/LargeVeggieBurrito.jpg";
@@ -14,21 +16,17 @@ import nonMLStyles from "../styles/NonMenuLayout.module.css";
 import NonMenuLayout from "../Components/NonMenuLayout";
 import mCardStyle from "../styles/MenuCard.module.css";
 
-export default function Home({}) {
+export default function Home({ footer }) {
 	useEffect(() => {
 		let main = document.querySelector("main");
 		main.style.minHeight = "1vh";
-
-		// main.style.marginBottom = "-10px";
-
 		return () => {
 			main.style.minHeight = "100vh";
 		};
 	}, []);
-
 	return (
 		<>
-			<NonMenuLayout>
+			<NonMenuLayout footer={footer}>
 				{/* <section className={mCardStyle.LargeOuterContainer}> */}
 				<div className={homeStyle.contentHolder}>
 					<Image
@@ -57,15 +55,15 @@ export default function Home({}) {
 	);
 }
 
-// export async function getStaticProps(context) {
-// 	const menu = await getTestMenu();
-// 	return {
-// 		props: {
-// 			menu,
-// 		},
-// 		revalidate: 1, //seconds until re-render
-// 	};
-// }
+export async function getStaticProps() {
+	const footer = await makeAPICall("footer");
+	return {
+		props: {
+			footer,
+		},
+		revalidate: 1, //seconds until re-render
+	};
+}
 
 // <Head>
 // <title>

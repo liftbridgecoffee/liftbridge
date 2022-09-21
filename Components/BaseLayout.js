@@ -1,13 +1,13 @@
 import styles from "../styles/Layout.module.css";
 
 import Nav from "./Nav";
-import Footer from "./Footer";
+// import Footer from "./Footer";
 const BaseLayout = ({ children }) => {
 	return (
 		<>
 			<Nav />
-				<main className={styles.main}>{children}</main>
-			<Footer />
+			<main className={styles.main}>{children}</main>
+			{/* <Footer /> */}
 		</>
 	);
 };
