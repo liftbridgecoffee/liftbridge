@@ -21,3 +21,7 @@
 .contactLine {
 	padding-top: 0.5em;
 }
+
+.contactLine:hover {
+	color: rgb(78, 77, 77);
+}
