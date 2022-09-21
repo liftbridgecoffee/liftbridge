@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { makeAPICall } from "./api";
 import { FaInstagram } from "react-icons/fa";
 
+import MenuPageHead from "../Components/MenuPageHead";
 const About = ({ footer, about }) => {
 	useEffect(() => {
 		let main = document.querySelector("main");
@@ -33,7 +34,7 @@ const About = ({ footer, about }) => {
 
 	return (
 		<>
-		<MenuPageHead menu={{ title: "", description: "about us" }} />
+			<MenuPageHead menu={{ title: "", description: "about us" }} />
 			<NonMenuLayout footer={footer}>
 				<section className={aboutStyle.mainContainer}>
 					{about.items.map((item, index) => {
